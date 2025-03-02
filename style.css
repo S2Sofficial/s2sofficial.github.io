@@ -1,0 +1,309 @@
+ /* General Reset */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent default vertical scrolling */
+  }
+
+  body {
+    font-family: 'Merriweather', serif;
+    line-height: 1.6;
+    color: #fff;
+    display: flex;
+    flex-direction: row; /* Align sections horizontally */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap sections horizontally */
+    scroll-behavior: smooth; /* Smooth scrolling */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  /* Full-page Sections */
+  section {
+    flex: 0 0 100vw; /* Each section takes full viewport width */
+    height: 100vh; /* Each section takes full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    scroll-snap-align: start; /* Snap sections to the start */
+  }
+
+  /* Hero Section */
+  #hero {
+    background: url('/assets/spotlight.gif') no-repeat center center/cover;
+  }
+
+  .hero-content {
+    z-index: 2;
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 4rem); /* Responsive font size */
+margin-bottom: 1rem;
+text-transform: uppercase;
+letter-spacing: 4px;
+color: #1ABC9C; /* Fallback for older browsers */
+background: radial-gradient(circle at 50% 50%, #04ccb1, #00c9ac, #00c6a6, #00c3a1, #00bf9c, #00bc97, #00b991, #00b68c, #00b287, #00af82, #03ab7d, #08a878);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text; /* Standard property */
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Optional: Improve readability */
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Optional: Improve readability */
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: radial-gradient(circle at 50% 50%, #04ccb1, #00c9ac, #00c6a6, #00c3a1, #00bf9c, #00bc97, #00b991, #00b68c, #00b287, #00af82, #03ab7d, #08a878);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* About Section */
+  #about {
+    background: radial-gradient(circle at 50% 50%, #027364, #046e5e, #056858, #066352, #065e4d, #075847, #075342, #064e3c, #064937, #054332, #043e2d, #033928);    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+    padding: 20px; /* Add some padding */
+  }
+
+  #about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem; /* Add space below the heading */
+  }
+
+  #about p {
+    font-size: 1.2rem;
+    max-width: 600px; /* Limit paragraph width for better readability */
+    line-height: 1.8;
+  }
+
+  /* Portfolio Section */
+  #portfolio {
+    background: #fff;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+    padding: 20px; /* Add some padding */
+  }
+
+  #portfolio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem; /* Add space below the heading */
+    color: radial-gradient(circle at 50% 50%, #027364, #046e5e, #056858, #066352, #065e4d, #075847, #075342, #064e3c, #064937, #054332, #043e2d, #033928);  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px; /* Limit grid width for better readability */
+  }
+
+  .project-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Remove underline from link */
+    display: block;
+  }
+
+  .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #027364;
+  }
+
+  .project-card p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-card a {
+    color: inherit;
+    text-decoration: none; /* Remove underline */
+    cursor: pointer;
+  }
+
+  .project-card a:hover{
+        color: #3498DB; 
+        text-decoration: underline; 
+      
+  }
+
+  /* Card Button Styling */
+  .card-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #3498DB; /* Vibrant blue background */
+    color: #FFFFFF; /* White text */
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: auto; /* Push the button to the bottom */
+    margin-bottom: 1rem; /* Add space below the button */
+    align-self: center; /* Center the button horizontally */
+  }
+  
+  .card-button:hover {
+    background: #151e1c; /* Teal on hover */
+    color: wheat;
+    transform: translateY(-2px); /* Slight lift on hover */
+  }
+  }
+  
+  .card-button:hover {
+    background: #1ABC9C; /* Teal on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+  }
+
+ /* Contact Section */
+#contact {
+    background: #333; /* Background color of the section */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+    padding: 20px; /* Add some padding */
+    min-height: 100vh; /* Ensure the section takes full viewport height */
+    position: relative; /* For absolute positioning of the button */
+  }
+  
+  /* Contact Content Container */
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    flex: 1; /* Take up remaining space */
+  }
+  
+  /* Contact Section Heading */
+  #contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem; /* Add space below the heading */
+  }
+  
+  /* Contact Section Links */
+  #contact a {
+    color: #04ccb1; /* Link color */
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  #contact a:hover {
+    color: #a777e3; /* Link hover color */
+  }
+  
+  /* Contact Section Paragraphs */
+  #contact p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem; /* Add space below paragraphs */
+    line-height: 1.8; /* Improve readability with line height */
+  }
+  
+  /* Footnote Styling */
+#contact .footnote {
+    position: absolute; /* Position the footnote */
+    bottom: 20px; /* Place it at the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for exact center */
+    font-size: 0.9rem; /* Smaller font size */
+    color: #666; /* Subtle text color */
+    text-align: center; /* Center align text */
+    width: 100%; /* Full width */
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 3rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+
+    #about h2,
+    #portfolio h2,
+    #contact h2 {
+      font-size: 2rem;
+    }
+
+    #about p {
+    font-size: 14px; 
+    max-width: 90%; 
+    }
+
+    #contact p {
+        font-size: 1rem; /* Smaller text on mobile */
+      }
+    
+      .resume-button {
+        padding: 0.8rem 1.5rem; /* Smaller button on mobile */
+        font-size: 0.9rem;
+      }
+    }
+ 
